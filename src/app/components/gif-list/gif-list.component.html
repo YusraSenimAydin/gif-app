@@ -1,0 +1,15 @@
+<section class="container mx-auto mt-8">
+  <h2 class="text-xl font-semibold text-gray-800 mb-4">Trending GIFs</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    @for( gif of trendingGifs; track gif.id){
+    <div class="bg-white rounded-lg shadow-md cursor-pointer">
+      <img [src]="gif.images.original.url" [alt]="gif.title" class="w-full h-40 object-cover object-center rounded-t-lg">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ gif.title }}</h3>
+      </div>
+    </div>
+  } @empty {
+    <span>empty</span>
+  }
+  </div>
+</section>
