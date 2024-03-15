@@ -10,6 +10,8 @@ import { Gif } from '../../models/gif.model';
 export class GifListComponent implements OnInit {
   trendingGifs: Gif[] = [];
   gif: any = [];
+  selectedGif: Gif | undefined;
+
   constructor(private gifService: GifService) {}
 
   ngOnInit(): void {
@@ -18,12 +20,16 @@ export class GifListComponent implements OnInit {
   }
 
   getTrendingGifs(): void {
-    this.gifService.getTrendingGifs().subscribe((response: any) => {
-      this.trendingGifs = response.data;
+    this.gifService.getTrendingGifs().subscribe({
+      next: (response: any) => {
+        console.log(response.data)
+        this.trendingGifs = response.data as Gif[];
+      },
+      error: (error) => console.log('Error getTrendingGifs', error),
     });
   }
 
-  getGifDetails(id: string): void {
-    // Implement your logic to get details of a specific gif
+  getGifDetails(gif: Gif): void {
+    this.selectedGif = gif;
   }
 }
