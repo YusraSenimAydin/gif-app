@@ -10,4 +10,8 @@ export interface Gif {
       url: string;
     };
   };
+  user: {
+    description:string;
+    
+  };
 }

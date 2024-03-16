@@ -11,8 +11,7 @@ const apiKey = environment.apiKey;
   providedIn: 'root',
 })
 export class GifService {
-
-
+  [x: string]: any;
   private http = inject(HttpClient);
   //constructor(private http: HttpClient) {}
 
@@ -27,14 +26,7 @@ export class GifService {
     return this.http.get<Gif>(`${apiUrl}/${id}?api_key=${apiKey}`);
   }
 
-
-  getGifById(gifId: string): Observable<Gif> {
-    return this.http.get<Gif>(`${apiUrl}/${gifId}`);
-  }
-
   searchGifs(query: string): Observable<any> {
-    return this.http.get(
-      `${apiUrl}/search?api_key=${apiKey}&q=${query}`
-    );
+    return this.http.get(`${apiUrl}/search?api_key=${apiKey}&q=${query}`);
   }
 }
