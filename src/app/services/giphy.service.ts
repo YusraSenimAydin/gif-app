@@ -11,7 +11,6 @@ const apiKey = environment.apiKey;
   providedIn: 'root',
 })
 export class GifService {
-  [x: string]: any;
   private http = inject(HttpClient);
   //constructor(private http: HttpClient) {}
 

@@ -13,6 +13,7 @@ import { SearchComponent } from './components/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GifService } from './services/giphy.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     SearchComponent,
     PageNotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule ],
   providers: [GifService],
   bootstrap: [AppComponent],
 })

@@ -14,8 +14,13 @@ export class SearchComponent {
   constructor(private gifService: GifService) {}
 
   search(): void {
-    this.gifService.searchGifs(this.searchTerm).subscribe((results: any) => {
-      this.searchResults = results.data;
-    });
+    if (this.searchTerm.trim() !== '') {
+      this.gifService.searchGifs(this.searchTerm).subscribe((results: any) => {
+        this.searchResults = results.data;
+        console.log(this.searchResults);
+      });
+    } else {
+      this.searchResults = [];
+    }
   }
 }

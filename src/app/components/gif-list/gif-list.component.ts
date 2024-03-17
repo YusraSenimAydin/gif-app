@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GifService } from '../../services/giphy.service';
 import { Gif } from '../../models/gif.model';
 import { Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './gif-list.component.css',
 })
 export class GifListComponent implements OnInit {
-  trendingGifs: Gif[] = [];
+  @Input()  trendingGifs: Gif[] = [];
   selectedGif: Gif | undefined;
   gif!: Gif;
 
@@ -33,6 +33,7 @@ export class GifListComponent implements OnInit {
   getGifDetails(gif: Gif): void {
     console.log('selected gif' , gif )
     this.router.navigate(['/details', gif.id]); // Kullanıcıyı detay sayfasına yönlendir
+
   }
 
 

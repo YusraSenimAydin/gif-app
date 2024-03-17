@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Gif } from '../../models/gif.model';
 import { GifService } from '../../services/giphy.service';
@@ -7,11 +7,11 @@ import { GifService } from '../../services/giphy.service';
   selector: 'app-gif-details',
   templateUrl: './gif-details.component.html',
   styleUrls: ['./gif-details.component.css'],
-  
+
 
 })
 export class GifDetailsComponent implements OnInit {
-  gifDetails: Gif | undefined;
+  @Input() gifDetails: Gif | undefined;
 
   constructor(private route: ActivatedRoute, private gifService: GifService) {}
 

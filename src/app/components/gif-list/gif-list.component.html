@@ -10,9 +10,9 @@
         praesentium earum beatae dolorum inventore expedita veniam!.</p>
     </div>
     <div class="flex flex-wrap -m-4" (click)="getGifDetails(gif)">
-      @for( gif of trendingGifs; track gif.id){
-      <div class="xl:w-1/4 md:w-1/2 p-4"   [title]="gif.title + ' details'"
-      [routerLink]="['/details', gif.id] ">
+      @for( gif of trendingGifs; track gif.id ){
+      <div class="xl:w-1/4 md:w-1/2 p-4  cursor-pointer" [title]="gif.title + ' details'"
+        [routerLink]="['/details', gif.id] ">
         <div class="bg-gray-100 p-6 rounded-lg">
           <img class="h-40 rounded w-full object-cover object-center mb-6" [src]="gif.images.original.url"
             [alt]="gif.title">
@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      }
+       }
 
     </div>
   </div>
