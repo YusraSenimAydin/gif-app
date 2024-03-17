@@ -9,10 +9,9 @@
         Ipsam fuga animi modi, non laboriosam repellat illum natus pariatur doloremque aliquam ducimus! Voluptas sunt
         praesentium earum beatae dolorum inventore expedita veniam!.</p>
     </div>
-    <div class="flex flex-wrap -m-4" (click)="getGifDetails(gif)">
+    <div class="flex flex-wrap -m-4">
       @for( gif of trendingGifs; track gif.id ){
-      <div class="xl:w-1/4 md:w-1/2 p-4  cursor-pointer" [title]="gif.title + ' details'"
-        [routerLink]="['/details', gif.id] ">
+      <div class="xl:w-1/4 md:w-1/2 p-4  cursor-pointer" [title]="gif.title + ' details'" (click)="getGifDetails(gif)">
         <div class="bg-gray-100 p-6 rounded-lg">
           <img class="h-40 rounded w-full object-cover object-center mb-6" [src]="gif.images.original.url"
             [alt]="gif.title">
@@ -20,7 +19,6 @@
           <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{gif.username}}</h2>
         </div>
       </div>
-
        }
 
     </div>

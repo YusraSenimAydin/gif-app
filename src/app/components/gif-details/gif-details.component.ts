@@ -10,20 +10,28 @@ import { GifService } from '../../services/giphy.service';
 
 
 })
+
+
 export class GifDetailsComponent implements OnInit {
   @Input() gifDetails: Gif | undefined;
 
   constructor(private route: ActivatedRoute, private gifService: GifService) {}
 
-  ngOnInit(): void {
+  async ngOnInit() {
     const gifIdFromRoute = this.route.snapshot.paramMap.get('id');
-
-    if (gifIdFromRoute) {
-      this.gifService
-        .getGifDetails(gifIdFromRoute)
-        .subscribe((response: any) => {
-          this.gifDetails = response.data;
-        });
-    }
+    this.getTrendingGifs(gifIdFromRoute);
   }
+
+
+  getTrendingGifs(gifIdFromRoute:string | null) {
+    this.gifService.getGifDetails(gifIdFromRoute).subscribe({
+      next: (response: any) => {
+        this.gifDetails = response.data as Gif;
+      },
+      error: (error) => console.log('Error getTrendingGifs', error),
+    });
+  }
+
+
+
 }
