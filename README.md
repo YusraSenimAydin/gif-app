@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Clone this repository to your local machine
 
-    `git clone <repository_url>`
+    `git clone https://github.com/YusraSenimAydin/gif-app`
 
 ## Navigate to the project directory
 
