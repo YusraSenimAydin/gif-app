@@ -1,14 +1,32 @@
-# GifApp
+# Giphy App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+ Welcome to Giphy App, an Angular web application that allows users to view trending GIFs from Giphy, search for GIFs, and view detailed information about each GIF.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Clone this repository to your local machine
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    `git clone <repository_url>`
+
+## Navigate to the project directory
+
+    `cd gif-app`
+
+## Install dependencies using npm
+
+    `npm install`   
+
+## To start the application, run  
+
+    `ng serve`   
+
+## This project
+
+- Trending GIFs: View a list of trending GIFs fetched from Giphy.
+- Search: Search for GIFs using keywords and view a list of search results.
+- GIF Details: Expand a GIF to view its details including username and rating.
 
 ## Build
 
